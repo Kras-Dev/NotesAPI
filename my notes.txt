@@ -1,0 +1,28 @@
+go run main.go
+http://localhost:8080/notes
+Остановка приложения:
+Нажмите сочетание клавиш Ctrl + C. 
+
+Инициализировать модуль Go в вашем проекте.
+go mod init имя_вашего_модуля
+
+go test -run TestGetNotes
+go test -v  Чтобы вывести более подробную информацию о каждом тесте при его выполнении
+
++++++++++++++++++++++
+
+PowerShell
+Invoke-WebRequest -Uri http://localhost:8080/notes -Method POST -ContentType "application/json" -Body '{"id": "1", "content": "Это моя первая заметка!"}'
+
+Invoke-WebRequest -Uri http://localhost:8080/notes/1 -Method GET 
+
+$json = '{"id": "1", "content": "Это моя первая заметка!"}' 
+$utf8Json = [System.Text.Encoding]::UTF8.GetBytes($json)
+
+Invoke-WebRequest -Uri http://localhost:8080/notes -Method POST -ContentType "application/json; charset=utf-8" -Body $utf8Json
+ 
+
+Bash
+curl -X POST http://localhost:8080/notes -H "Content-Type: application/json" -d '{"id": "1", "content": "Это моя первая заметка!"}'
+
+
