@@ -13,3 +13,21 @@ The API allows you to perform the following operations with notes:
 - Delete a note by ID
 
 The API will be available at http://localhost:8080.
+
+## Usage
+Here are some examples of using the API with curl:
+
+Get all notes:
+curl -X GET http://localhost:8080/notes
+
+Get note by ID:
+curl -X GET http://localhost:8080/notes/test
+
+Create a new note:
+curl -X POST http://localhost:8080/notes -H "Content-Type: application/json" -d '{"id":"test","content":"This is a new test note"}'
+
+Update note:
+curl -X PUT http://localhost:8080/notes/test -H "Content-Type: application/json" -d '{"id":"test","content":"This is an updated test note"}'
+
+Delete note:
+curl -X DELETE http://localhost:8080/notes/test
